@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-12">
+
+    <div class="card my-3">
+      <div class="card-header">
+        <div class="row">
+          <h5 class="mb-2 col-6" id="comment" data-commentId="{{content.id}}">
+            {{content.name}}
+          </h5>
+          <div class="col-5">
+            <p class="text-end fs-6">
+              Created by {{content.user.name}} on {{content.date_created}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          {{content.content}}
+        </p>
+      </div>
+    </div>
+
+    {{#each comments as |comment| }}
+    <div class="card my-3">
+      <div class="card-header">
+        <div class="row">
+          Comment by {{comment.username}}
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          {{comment.comment}}
+        </p>
+      </div>
+      <div class="col-5">
+        <p class="text-end fs-6">
+        </p>
+      </div>
+    </div>
+    {{/each}}
+
+    <div class="card my-3">
+      <div class="card-header">
+        <div class="row">
+          <h5 class="mb-2 col-6" id="comment" data-id="{{content.id}}">
+            Add new comment
+          </h5>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          <div class="form-outline mb-4">
+            <textarea class="form-control" id="comment-text" data-id="{{content.id}}" data-name="{{user.name}}" rows="3"></textarea>
+            <label class="form-label" for="comment"></label>
+          </div>
+        </p>
+      </div>
+      <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+      <div class="col-5">
+        <p class="text-end fs-6">
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/updateComment.js"></script>

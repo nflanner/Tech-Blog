@@ -1,0 +1,37 @@
+<div class="row" id="all-content">
+<!-- Loop over each object in the content array -->
+{{#each allContent as |content| }}
+  <div class="col-12">
+
+    <div class="card my-3" id="content-card" data-userId="{{user.id}}" data-userName="{{user.name}}">
+      <div class="card-header">
+        <div class="row">
+          <h5 class="mb-2 col-6">
+            {{content.name}}
+          </h5>
+          <div class="col-5">
+            <p class="text-end fs-6">
+              Created by {{content.user.name}} on {{content.date_created}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-text py-3" id="content-text">
+          {{content.content}}
+        </p>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="edit" data-editId="{{content.id}}">Edit Post</button>
+        <button type="submit" class="btn btn-danger btn-lg btn-block" id="delete" data-deleteId="{{content.id}}">Delete Post</button>
+      </div>
+    </div>
+  </div>
+{{/each}}
+
+  <div class="col-12 justify-content-center">
+    <div class="text-center justify-content-center">
+      <button type="submit" class="btn btn-success" data-newPost="true">New Post</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/dashboard.js"></script>

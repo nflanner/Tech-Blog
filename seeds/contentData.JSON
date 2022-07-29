@@ -1,11 +1,11 @@
 [
     {
-        "name": "Luvs2Code94",
-        "content": "I love to code.",
+        "name": "I love to code",
+        "content": "I love to code!",
         "user_id": 1
     },
     {
-        "name": "BE4Lyfe2112",
+        "name": "Backend is the best",
         "content": "Backend logic is the best!",
         "user_id": 2
     }

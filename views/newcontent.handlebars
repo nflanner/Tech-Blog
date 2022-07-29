@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-12">
+
+    <div class="card my-3" id="content-card">
+      <div class="card-header">
+        <div class="row">
+          <h5 class="mb-2 col-12">
+            Post Title
+          </h5>
+          <div class="col-12">
+            <div class="form-group">
+              <label for="content-name"></label>
+              <input type="text" class="form-control" id="content-name" data-id="{{req.session.user_id}}">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="form-outline">
+          <h3>Post Content</h3>
+          <textarea class="form-control" id="content-input" rows="4"></textarea>
+          <label class="form-label" for="content-input"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary" id="newPost">Submit</button>
+  </div>
+</div>
+
+<script src="/js/newcontent.js"></script>
