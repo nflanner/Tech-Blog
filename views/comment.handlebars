@@ -8,8 +8,8 @@
             {{content.name}}
           </h5>
           <div class="col-5">
-            <p class="text-end fs-6">
-              Created by {{content.user.name}} on {{content.date_created}}
+            <p class="float-right fs-6">
+              Created on {{content.date_created}}
             </p>
           </div>
         </div>
@@ -33,10 +33,6 @@
           {{comment.comment}}
         </p>
       </div>
-      <div class="col-5">
-        <p class="text-end fs-6">
-        </p>
-      </div>
     </div>
     {{/each}}
 
@@ -57,10 +53,6 @@
         </p>
       </div>
       <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-      <div class="col-5">
-        <p class="text-end fs-6">
-        </p>
-      </div>
     </div>
   </div>
 </div>

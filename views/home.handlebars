@@ -9,14 +9,17 @@
           <h5 class="mb-2 col-6" id="comment" data-commentId="{{content.id}}">
             {{content.name}}
           </h5>
-          <div class="col-5">
-            <p class="text-end fs-6">
+          <div class="col-6">
+            <p class="float-right fs-6">
               Created by {{content.user.name}} on {{content.date_created}}
             </p>
           </div>
         </div>
       </div>
       <div class="card-body">
+        <p>
+          {{content.content}}
+        </p>
       </div>
     </div>
   </div>

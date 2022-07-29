@@ -1,0 +1,44 @@
+:root {
+    --dark: #231010;
+    --light: #d9ead3;
+  }
+
+body {
+    background-color: var(--light) !important;
+}
+
+nav {
+    background-color: var(--dark) !important;
+    color: var(--dark) !important;
+}
+
+h1 {
+    border-radius: 10px;
+    background-color: var(--light);
+    width: 270px;
+    padding: 5px;
+    box-shadow: 5px 5px #a7a7a7;
+}
+
+.navbar-nav .nav-item {
+    color: var(--light) !important;
+}
+
+form div a {
+    color: blue !important;
+}
+
+.card {
+    border-color: var(--dark);
+    border-width: 5%;
+}
+
+.card-header {
+    color: var(--light);
+    background-color: var(--dark);
+}
+
+.card-body {
+    background-color: var(--light);
+    color: var(--dark);
+}

@@ -2,20 +2,19 @@ const router = require('express').Router();
 const { Content, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
-    console.log('IN / ROUTE')
-  try {
-    res.render('homepage', {});
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get('/', async (req, res) => {
+//     console.log('IN / ROUTE')
+//   try {
+//     res.render('home', {});
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // Use withAuth middleware to prevent access to route
-router.get('/home', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
 
-    console.log('IN /HOME ROUTE');
     const contentData = await Content.findAll({
       include: [
         {
@@ -36,7 +35,6 @@ router.get('/home', withAuth, async (req, res) => {
 
     res.render('home', {
       allContent,
-      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
@@ -73,7 +71,7 @@ router.get('/edit-content/:id', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/home');
+    res.redirect('/dashboard');
     return;
   }
 
@@ -83,14 +81,14 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
     // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/home');
+    res.redirect('/');
     return;
   }
   
   res.render('signup');
 });
 
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
 
   try {
     // Get all recipes and JOIN with user data
