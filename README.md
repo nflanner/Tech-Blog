@@ -60,11 +60,21 @@ The following animation demonstrates the application functionality:
 
 ## Getting Started
 
-Your application’s folder structure must follow the Model-View-Controller paradigm. You’ll need to use the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views, use the [MySQL2](https://www.npmjs.com/package/mysql2) and [Sequelize](https://www.npmjs.com/package/sequelize) packages to connect to a MySQL database for your Models, and create an Express.js API for your Controllers.
+The deployed (via Heroku) application can be found [here](https://tech-blog-nflanner.herokuapp.com/).
 
-You’ll also need the [dotenv package](https://www.npmjs.com/package/dotenv) to use environment variables, the [bcrypt package](https://www.npmjs.com/package/bcrypt) to hash passwords, and the [express-session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) packages to add authentication.
+The GitHub repository can be found [here](https://github.com/nflanner/Tech-Blog).
 
-**Note**: The [express-session](https://www.npmjs.com/package/express-session) package stores the session data on the client in a cookie. When you are idle on the site for more than a set time, the cookie will expire and you will be required to log in again to start a new session. This is the default behavior and you do not have to do anything to your application other than implement the npm package.
+To run locally:
+* clone the GitHub repo using the above link
+* create a **.env** file from the repo root that houses your personal MySQL password, username, and db name
+* run `npm i` from the repo root to install all dependencies
+* login into your personal MySQL account via CLI and source the db by running (from within MySQL CLI at the repo root) `source db/schema.sql`
+* seed the db with `npm run seed`
+* start the application with `npm run start`
+
+Once the application is running you can then go to localhost:3001 in your preferred browser which will route you to the homepage. The homepage will show all posts from other users (including yourself). You can click on the title of a post to leave a comment. To access the Dashboard, you must click 'Sign In'. Once done, you will be prompted to sign in or given the choice to sign up. After signing in or signing up, you can then click 'Dashboard' in the navigation bar to route to a page with all of your posts. From here, you can edit and/or delete any past posts you have made, or you can click 'New Post' to make a new post. All new posts/updates will be automatically refreshed on the Home page. 
+
+I hope you find all the user tips as helpful as I do, enjoy!
 
 ## Grading Requirements
 
